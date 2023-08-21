@@ -1,3 +1,9 @@
+# Read data from CSV file
+input_file = 'input_data.csv'
+df = pd.read_csv(input_file)
+# Create a DataFrame from the data
+
+
 import pandas as pd
 import re
 
@@ -9,15 +15,12 @@ data = {
     'uc id': ['', '55455', '64534', 'etete', 'et45t64', '54rtrt']
 }
 
-# Read data from CSV file
-input_file = 'input_data.csv'
-df = pd.read_csv(input_file)
 # Create a DataFrame from the data
 df = pd.DataFrame(data)
 
 # Function to extract 5-digit numbers from a string
 def extract_5_digit_numbers(text):
-    numbers = re.findall(r'\b(\d{5})\b', text)
+    numbers = re.findall(r'\b\d{5}\b', text)
     return numbers
 
 # Find the unique IDs with 5-digit numbers in comments or uc id
